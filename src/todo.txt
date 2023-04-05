@@ -1,0 +1,15 @@
+Alignment Table:
+- render table ALWAYS! --> Re-render it everytime the input to seqA and seqB changes!
+- populate with data
+- find optimal Alignment
+- hover to show calculations feature
+- animation --> oh shit
+- animation speed slider
+
+Box:
+- square with rounded corners
+- different style/background profiles --> This may involve a prop or another entry in the array we already pass to it
+- hover animation (make it shake or zoom when you hover over it) --> use something from DaisyUI!
+
+Alignment algorithm:
+- correctly calculate scores for the cells

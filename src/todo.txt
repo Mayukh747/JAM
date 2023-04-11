@@ -1,4 +1,19 @@
+Hey Prof!
+
+I would like to propose a team of 3 (myself, James Jian and Andrew Townsend) for the semester project. We intend to simulate an algorithm (we’re still debating between MSA and phylogenetic tree) and come up with an aesthetic and presentable UI with animations as well as possible a backend API to handle processing input.
+
+I hope a project of such scale captures your attention, and would like to hear back from you regarding your approval as well as any feedback you might have.
+
+Thanks in advance,
+
+- Mayukh
+
+Sent from my iPhone
+
+
+
 Alignment Table:
+- make it a separate component
 - render table ALWAYS! --> Re-render it everytime the input to seqA and seqB changes!
 - populate with data
 - find optimal Alignment

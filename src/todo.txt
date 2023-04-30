@@ -1,8 +1,11 @@
 Hey Prof!
 
-I would like to propose a team of 3 (myself, James Jian and Andrew Townsend) for the semester project. We intend to simulate an algorithm (we’re still debating between MSA and phylogenetic tree) and come up with an aesthetic and presentable UI with animations as well as possible a backend API to handle processing input.
+I would like to propose a team of 3 (myself, James Jian and Andrew Townsend) for the semester project. 
+We intend to simulate an algorithm (we’re still debating between MSA and phylogenetic tree) and come up 
+with an aesthetic and presentable UI with animations as well as possible a backend API to handle processing input.
 
-I hope a project of such scale captures your attention, and would like to hear back from you regarding your approval as well as any feedback you might have.
+I hope a project of such scale captures your attention, and would like to hear back from you regarding your approval
+ as well as any feedback you might have.
 
 Thanks in advance,
 
@@ -24,7 +27,24 @@ Alignment Table:
 Box:
 - square with rounded corners
 - different style/background profiles --> This may involve a prop or another entry in the array we already pass to it
-- hover animation (make it shake or zoom when you hover over it) --> use something from DaisyUI!
+- hover animation (make it shake or zoom when you hover over iat) --> use something from DaisyUI!
 
 Alignment algorithm:
-- correctly calculate scores for the cells
+
+
+Aesthetics:
+- Make the page Jam themed!
+- boxes with rounded corners!
+- cool background with svg animation?
+
+MSA:
+- Compute optimal alignment between each sequence pair
+- Calculate OPTIMAL distances for each alignment pair and put them into a matrix
+    - Question: How do the difference scores between optimal alignments vary? 
+- I think this will require solving the distances while solving the table, otherwise the programming
+part of it seems to become a mess
+    I just want one alignment when I'm done.
+
+NCBI:
+- find a way to retrieve fasta sequeces according to some user input like an accession number
+- introduce a manual sleep so that we don't get timeouts from the api requests

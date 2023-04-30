@@ -3,6 +3,10 @@
 
     export let table = [[]];
     
+    export function y(){
+      console.log("YEA");
+    }
+    
 </script>
 
 <table>

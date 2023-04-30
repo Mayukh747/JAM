@@ -1,20 +1,26 @@
 <script>
 
-//Put some logic here regarding the type of box
-//1. Blank  2. Tile 3. Default
+
 
  export let values = ["",false,false,false, "style"];
 
  
- let bg = "bg-blue-600";
 
 
+//Put some logic here regarding the type of box
+//1. Blank  2. Tile 3. Default
  function determineStyle(){
+    if (values[4] == "red"){
+        return "bg-red-600";
+    }
+    else{
+        return "bg-blue-600"
+    }
     
  }
 </script>
 
-<div class=" {values[0] == "" ? "hidden" : ""} {bg} relative flex items-center justify-center w-20 h-20 border-black border-2">
+<div class="{values[0] == "" ? "hidden" : ""} {determineStyle()} relative flex items-center justify-center w-20 h-20 border-black border-2">
     
     {#if values[1]}
     <img class ="absolute left-auto top-0 h-5" src="upArrow.svg" alt="up">

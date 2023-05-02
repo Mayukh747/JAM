@@ -125,7 +125,7 @@
 </script>
 
   <!-- {@debug table} -->
-
+<div class="bg-pink-300">
 <div class="form-control w-full max-w-xs">
   <label class="label">
     <span class="label-text">What is your first nucleotide sequence?</span>
@@ -193,5 +193,5 @@
 </div>
 
 <Table table={table}/>
-  
+</div>
 

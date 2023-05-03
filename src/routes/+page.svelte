@@ -1,4 +1,5 @@
 <div>
+  <!-- TODO:Get the entire image to show up on screen instead of zooming into it when the screen gets wider -->
   <div class="hero min-h-screen" style="background-image: url(jam.png);">
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">

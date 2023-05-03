@@ -10,7 +10,7 @@
           <label tabindex="0" class="btn btn-ghost rounded-btn">Compute!</label>
           <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
             <li><a href="/pwa">PWA</a></li> 
-            <li><a href="/msa">MSA</a></li>
+            <li><a href="/wpgma">WPGMA</a></li>
             <li><a href="/ncbi">NCBI API</a></li>
             <li><a href="/tree">Tree</a></li>
           </ul>

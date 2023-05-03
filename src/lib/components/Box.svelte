@@ -1,10 +1,7 @@
 <script>
 
-
-
  export let values = ["",false,false,false, "style"];
 
- 
 
 
 //Put some logic here regarding the type of box
@@ -12,6 +9,12 @@
  function determineStyle(){
     if (values[4] == "red"){
         return "bg-red-600";
+    }
+    else if(values[4] == "green"){
+        return "bg-green-600";
+    }
+    else if(values[4] == "orange"){
+        return "bg-orange-600";
     }
     else{
         return "bg-blue-600"

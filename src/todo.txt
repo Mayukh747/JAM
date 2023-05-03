@@ -15,25 +15,11 @@ Sent from my iPhone
 
 
 
-Alignment Table:
-
-- render table ALWAYS! --> Re-render it everytime the input to seqA and seqB changes!
-
-- find optimal Alignment
-- hover to show calculations feature
-- animation speed slider
-
-Box:
 - different style/background profiles --> This may involve a prop or another entry in the array we already pass to it
-- hover animation (make it shake or zoom when you hover over iat) --> use something from DaisyUI!
 
 Alignment algorithm:
 
 
-Aesthetics:
-- Make the page Jam themed!
-- boxes with rounded corners!
-- cool background with svg animation?
 
 MSA:
 - Compute optimal alignment between each sequence pair
@@ -46,3 +32,7 @@ part of it seems to become a mess
 NCBI:
 - find a way to retrieve fasta sequeces according to some user input like an accession number
 - introduce a manual sleep so that we don't get timeouts from the api requests
+
+
+sound fx
+speech --> prepare presentation and demo for the visualizer

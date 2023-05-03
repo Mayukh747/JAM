@@ -10,15 +10,23 @@
   // const words = headers.split(' ');
 
   let seqA = 'duck';
+  let seqAOptimal = "";
+  let seqBOptimal = "";
   let seqB = 'trump';
   let match = 1;
   let mismatch = -1;
   let gap = -2;
+
+  let animationSpeed = 500;
   let renderTable = true;
   /**
    * @type {any[]}
    */
   let table = [[]];
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
   /**
    * @param {string} s1
@@ -53,21 +61,40 @@
   /**
    * @param {string} s1
    * @param {string} s2
+   * @param {number} speed
    */
-  async function needlemanWunsch(s1, s2){
+  async function needlemanWunsch(s1, s2, speed){
     initializeMatrix(s1,s2);
 
     //Solve all the cells in the table. 
     for(let idx = 2; idx < Math.min(table.length, table[0].length); idx++){
       //Row
       for(let col = idx; col < table[0].length; col++){
-        solveCellNeedlemanWunsch(idx, col);
-        await new Promise(r => setTimeout(r, 100));
+        
+        // await new Promise(r => setTimeout(r, 100));
+        // sleep(1000);
+        // await sleep(1 * 1000);
+        table[idx][col-1][4] = "green";
+        table[idx-1][col-1][4] = "green";
+        table[idx-1][col][4] = "green";
+        solveCellNeedlemanWunsch(idx, col, speed);
+        await sleep(speed);
+        table[idx][col-1][4] = "blue";
+        table[idx-1][col-1][4] = "blue";
+        table[idx-1][col][4] = "blue";
+
       }
       //Col
       for(let row = idx + 1; row < table.length; row++){
-        solveCellNeedlemanWunsch(row, idx);
-        await new Promise(r => setTimeout(r, 100));
+        // solveCellNeedlemanWunsch(row, idx, speed);
+        table[row][idx-1][4] = "green";
+        table[row-1][idx][4] = "green";
+        table[row-1][idx-1][4] = "green";
+        solveCellNeedlemanWunsch(row, idx, speed);
+        await sleep(speed);
+        table[row][idx-1][4] = "blue";
+        table[row-1][idx][4] = "blue";
+        table[row-1][idx-1][4] = "blue";
       } 
     }
 
@@ -101,16 +128,22 @@
   /**
    * @param {number} row
    * @param {number} col
+   * @param {number} speed
    */
-  function solveCellNeedlemanWunsch(row, col){
+  async function solveCellNeedlemanWunsch(row, col, speed){
+
     // console.log(gap + " " + typeof(gap));
     let topVal = Number(table[row-1][col][0]) + Number(gap);
     let diagVal = Number(table[row-1][col-1][0]) + (table[row][0][0]==table[0][col][0] ? Number(match) : Number(mismatch));
     let leftVal = Number(table[row][col-1][0]) + Number(gap);
     
     let cellScore = Math.max(topVal, diagVal, leftVal);
+    
 
     table[row][col] = [cellScore.toString(), topVal==cellScore, diagVal==cellScore, leftVal==cellScore];
+
+    
+
   }
 
 
@@ -132,7 +165,7 @@
   </label>
   <input bind:value={seqA} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
   <label class="label">
-  </label>seqA = {seqA}
+  <!-- </label>seqA = {seqA} -->
 </div>
 
 
@@ -142,7 +175,7 @@
   </label>
   <input bind:value={seqB} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
   <label class="label">
-  </label>seqB = {seqB}
+  <!-- </label>seqB = {seqB} -->
 </div>
 
 
@@ -153,7 +186,7 @@
   <input bind:value={match} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
   <label class="label">
   </label>
-  match = {match}
+  <!-- match = {match} -->
 </div>
 
 
@@ -164,7 +197,7 @@
   <input bind:value={mismatch} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
   <label class="label">
   </label>
-  mismatch = {mismatch}
+  <!-- mismatch = {mismatch} -->
 </div>
 
 
@@ -175,15 +208,15 @@
   <input bind:value={gap} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
   <label class="label">
   </label>
-  gap = {gap}
+  <!-- gap = {gap} -->
 </div>
 
-<button  on:click={() => needlemanWunsch(seqA,seqB)} class="btn btn-wide">Compute Optimal Alignment</button>
+<button  on:click={() => needlemanWunsch(seqA,seqB, animationSpeed)} class="btn btn-wide">Compute Optimal Alignment</button>
 
 
 <br>
 <!-- bruh this slider gay -->
-<input type="range" min="0" max="100" value="25" class="range" step="25" />
+<input bind:value={animationSpeed} type="range" min="100" max="1000"  class="range" step="250" />
 <div class="w-full flex justify-between text-xs px-2">
   <span>|</span>
   <span>|</span>
@@ -191,6 +224,7 @@
   <span>|</span>
   <span>|</span>
 </div>
+<!-- {animationSpeed} -->
 
 <Table table={table}/>
 </div>

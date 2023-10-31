@@ -15,7 +15,7 @@
     </div> 
     <div class="carousel-item w-1/2">
         <DMatrix
-        mat = {[[2,2],[2,3]]}/>
+        mat = {[[2,2,5],[2,3,6]]}/>
     </div> 
 </div>
 

@@ -42,18 +42,6 @@
 	</ul>
 </div> -->
 
-<div class="bg-red-500">
-	<div class="card w-96 glass">
-		<figure><img src="jam.png" alt="car!"/></figure>
-		<div class="card-body">
-		  <h2 class="card-title">Life hack</h2>
-		  <p>How to park your car at your garage?</p>
-		  <div class="card-actions justify-end">
-			<button class="btn btn-primary">Learn now!</button>
-		  </div>
-	  </div>
-	</div>
-  </div>
 
 <div class="hero min-h-screen bg-base-200">
 	<div class="hero-content flex-col lg:flex-row-reverse">
@@ -107,7 +95,7 @@ async function fetchFastA(ids) {
 </script>
 
 
-<style>
+<!-- <style>
   /*Now the CSS*/
 * {margin: 0; padding: 0;}
 
@@ -208,4 +196,4 @@ right connector from last child*/
 .tree li a:hover+ul ul::before{
 	border-color:  #94a0b4;
 }
-</style>
+</style> -->

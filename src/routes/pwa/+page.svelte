@@ -1,7 +1,7 @@
 
 <script>
   import Box from "$lib/components/Box.svelte";
-    import Table from "$lib/components/Table.svelte";
+  import Table from "$lib/components/Table.svelte";
   import { sequence } from "@sveltejs/kit/hooks";
   import { each } from "svelte/internal";
   const array = [[, 0], [-1, 3]]   

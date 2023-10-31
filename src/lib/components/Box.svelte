@@ -17,13 +17,13 @@
         return "bg-orange-600";
     }
     else{
-        return "bg-blue-600"
+        return          "bg-blue-600"
     }
     
  }
 </script>
 
-<div class="{values[0] == "" ? "hidden" : ""} {determineStyle()} rounded-2xl relative flex items-center justify-center w-20 h-20 border-black border-2">
+<div class="{values[0] == "" ? "" : ""} {determineStyle()} rounded-2xl relative flex items-center justify-center w-20 h-20 border-black border-2">
     
     {#if values[1]}
     <img class ="absolute left-auto top-0 h-5" src="upArrow.svg" alt="up">

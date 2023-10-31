@@ -9,7 +9,6 @@
     <table class="table table-compact w-full">
         <thead>
             <tr>
-              <th></th> 
               <th>Name</th> 
               <th>Job</th> 
               <th>company</th> 
